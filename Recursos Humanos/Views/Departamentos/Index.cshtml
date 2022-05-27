@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Recursos_Humanos.Models.Colaboradores.Departamento>
+
+@{
+    ViewData["Title"] = "Departamentos";
+}
+
+<br />
+<h1>Departamentos</h1>
+<hr />
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary"><i class="far fa-building"></i> Nuevo departamento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoDepartamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDepartamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoDepartamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDepartamento)
+            </td>
+            <td>
+                <span><a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit fa-lg text-success" style="padding-right: 6px;"></i></a></span>
+                <span><a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-file-alt fa-lg text-secondary" style="padding-right: 6px;"></i></a></span>   
+                <span><a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-lg fa-trash-alt text-danger" style="padding-left: 3px;"></i></a></span>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

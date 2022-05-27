@@ -1,0 +1,57 @@
+﻿@model Recursos_Humanos.Models.Procesos.Vacacion
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<div class="alert-danger rounded" style="padding:10px">    <p class="lead text-center text-danger">Si se siente seguro, como para eliminar el departamento, presione "Eliminar"</p></div>
+<div>
+    <h4>Vacacion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Empleado.Apellido)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Desde)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Desde)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hasta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hasta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnioCorrespondiente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AnioCorrespondiente)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Completa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Completa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Comentarios)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Comentarios)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index"><i class="fas fa-arrow-alt-circle-left"></i> Volver a la lista</a>
+    </form>
+</div>

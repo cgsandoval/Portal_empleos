@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+@*Bienvenida*@
+<div class="text-center">
+    <h1 class="display-4">SISTEMA PORTAL DE EMPLEOS-UMG</h1>
+</div>
+<hr />
+<br />
+@*imagen*@
+<img src="/img/logo.jpg"  style="width: 98%; height: 400px; alt="imgf" />
+<br />
+<hr />
+@*Grafico*@
+@*<div id="columnchart_material" style="width: 100%; height: 500px;"></div>
+<br />
+<hr />*@
+@*Acciones del sistema*@
+<div class="text-center">
+    <h3>Modulos del sistema- Reclutador</h3>
+</div>
+<hr />
+<div>
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action disabled bg-success text-light">
+            <div class="d-flex w-100 justify-content-between">
+                <h4><i class="fas fa-user-check"></i>  Mantenimientos</h4>
+            </div>
+            <p class="lead">Este m&oacute;dulo consiste en llenar las informaciones importantes para el flujo del sistema</p>
+        </a>
+        <a asp-action="Index" asp-controller="Departamentos" class="list-group-item list-group-item-action">Departamentos</a>
+        <a asp-action="Index" asp-controller="Cargos" class="list-group-item list-group-item-action">puestos publicados</a>
+        <a asp-action="Index" asp-controller="Empleados" class="list-group-item list-group-item-action">aspirantes</a>
+    </div>
+       
+</div>
+<br />
+<div>
+    <div class="list-group">
+        <a class="list-group-item bg-info text-white list-group-item-action disabled">
+            <div class="d-flex w-100 align-items-center">
+                
+                <h4><i class="fas fa-users-cog"></i>  Procesos</h4>
+            </div>
+            <p class="lead">Este m&oacute;dulo consiste en llenar las informaciones importantes para el flujo del sistema</p>
+        </a>
+        
+        <a asp-action="Index" asp-controller="Vacaciones" class="list-group-item list-group-item-action">procesos de contratacion activos</a>
+        <a asp-action="Create" asp-controller="Salidas" class="list-group-item list-group-item-action">terminacion de proceso</a>
+    </div>
+       
+</div>
+<br />
+
+<div>
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action text-white bg-warning disabled">
+            <div class="d-flex w-100 justify-content-between">
+                <h4><i class="fas fa-file-medical-alt"></i>  Informes</h4>
+            </div>
+            <p class="lead">Este m&oacute;dulo consiste en llenar las informaciones importantes para el flujo del sistema</p>
+        </a>
+        <a asp-action="Index" asp-controller="Salidas" class="list-group-item list-group-item-action">Hist&oacute;rico de salidas</a>
+        <a asp-action="EmpleadoActivos" asp-controller="Empleados" class="list-group-item list-group-item-action">Aspirantes activos</a>
+        <a asp-action="Index" asp-controller="Departamentos" class="list-group-item list-group-item-action">Departamentos</a>
+        <a asp-action="Index" asp-controller="Cargos" class="list-group-item list-group-item-action">Cargos</a>
+    </div>
+</div>
+

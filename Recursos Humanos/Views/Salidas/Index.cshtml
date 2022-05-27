@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Recursos_Humanos.Models.Procesos.Salida>
+
+@{
+    ViewData["Title"] = "Salidas";
+}
+
+<h1>Listado de salidas</h1>
+<hr />
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Nueva salida</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoSalida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Motivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaSalida)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @{
+                    ViewData["Concatenacion"] = item.Empleado.Nombre + " " + item.Empleado.Apellido;
+                  }
+                @ViewData["Concatenacion"]
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoSalida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaSalida)
+            </td>
+            <td>
+                <span><a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit fa-lg text-success" style="padding-right: 6px;"></i></a></span>
+                <span><a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-file-alt fa-lg text-secondary" style="padding-right: 6px;"></i></a></span>   
+                <span><a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-lg fa-trash-alt text-danger" style="padding-left: 3px;"></i></a></span>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

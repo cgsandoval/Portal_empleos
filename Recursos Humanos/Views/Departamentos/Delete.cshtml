@@ -1,0 +1,37 @@
+﻿@model Recursos_Humanos.Models.Colaboradores.Departamento
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar departamento</h1>
+<br />
+<div class="alert-danger rounded" style="padding:10px">
+    <p class="lead text-center text-danger">Si se siente seguro, como para eliminar el departamento, presione "Eliminar"</p>
+</div>
+
+<br />
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodigoDepartamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodigoDepartamento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreDepartamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreDepartamento)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <br />
+        <br />
+        <a asp-action="Index"><i class="fas fa-arrow-alt-circle-left"></i> Volver a la lista</a>
+    </form>
+</div>
